@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "279001252265",
+    "firebase_url": "https://greatcanadianrace.firebaseio.com",
+    "project_id": "greatcanadianrace",
+    "storage_bucket": "greatcanadianrace.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279001252265:android:566477eda760379d",
+        "android_client_info": {
+          "package_name": "com.example.dell.provinces"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279001252265-8hhdsijajp92o27potko488lujbn4vsb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dell.provinces",
+            "certificate_hash": "f1b33853e2805221a889b68f388bb3c2a37540d9"
+          }
+        },
+        {
+          "client_id": "279001252265-vl931nem956frj2e2985bctc15ca19u1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkWlvqErydGXBReNYKMaklWl3MMyErqyw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279001252265-vl931nem956frj2e2985bctc15ca19u1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

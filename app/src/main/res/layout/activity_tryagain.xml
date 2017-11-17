@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="You are having some difficulty!"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+    <ImageView
+        android:id="@+id/iv_success"
+        android:layout_width="395dp"
+        android:layout_height="218dp"
+        app:srcCompat="@drawable/mcanada" />
+
+    <Button
+        android:id="@+id/btn_helpingApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:text="GO TO HELPING APP" />
+
+    <Button
+        android:id="@+id/btnCollaborate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:text="COLLABORATE WITH A STUDENT" />
+
+    <Button
+        android:id="@+id/btnQuit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:text="TAKE A BREAK" />
+</LinearLayout>
