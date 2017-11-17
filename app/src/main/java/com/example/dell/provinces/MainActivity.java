@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             String lev = dataSnapshot.getValue().toString();
+                            String lev = dataSnapshot.getValue().toString();
                             level = Integer.parseInt(lev);
                         }
 
