@@ -80,7 +80,7 @@ public class Level10 extends AppCompatActivity {
 
         //present the questions
         counter = 0;
-
+        long tStart=System.elapsedRealtime();
         setQuestion();
 
         //set true/false listeners
@@ -117,7 +117,7 @@ public class Level10 extends AppCompatActivity {
         //change...check for 10 correct questions.....calculate score based on time + error*factor
         //check current high score.....if less....record new high score
         //show
-        if (i > 10 && ((counter / (i - 1)) > .9)) {    //questions changed to for testing.....change back to 25
+        if (i > 10 && ((counter /  > 9)) {    //questions changed to for testing.....change back to 25
             //next level
             Toast.makeText(this, "CONGRATULATIONS.....You have completed Level 10", Toast.LENGTH_LONG).show();
             level++;
