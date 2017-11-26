@@ -23,8 +23,8 @@ find an appropriate login.
 
 Screenshot examples of the individual levels are given below:
 
-<img src="image/media/image2.png" width="190" height="312" />
-<img src="image/image3.png" width="188" height="313" /><img src="media/image4.png" width="190" height="314" />
+<img src="image/image2.png" width="190" height="312" />
+<img src="image/image3.png" width="188" height="313" /><img src="image/image4.png" width="190" height="314" />
 
 LogOn Screen Level 1: Name the province Level 2: Name the outline
 
@@ -46,8 +46,8 @@ Provincial Birds
 
 Level 9: Provincial Flowers Level 10: High Score Level 10: High Score
 
-<img src="media/image14.png" width="182" height="325" />
-<img src="media/image15.png" width="184" height="326" />
+<img src="image/image14.png" width="182" height="325" />
+<img src="image/image15.png" width="184" height="326" />
 
 Level 10: High Score Level Completed
 
@@ -56,7 +56,7 @@ Level 10: High Score Level Completed
 
 ***DATA MODEL***
 
-<img src="media/image16.png" width="100" height="487" />
+<img src="image/image16.png" width="100" height="487" />
 
 This demo version of the database is simplified using none of the
 security features of the host application, FIREBASE.
@@ -79,7 +79,7 @@ The database has three “root” nodes:
 The current demo app database has no security and is totally open as
 shown in the below image.
 
-<img src="media/image17.png" width="422" height="237" />
+<img src="image/image17.png" width="422" height="237" />
 
 Scores are indexed in ascending order for improved access speed.
 
