@@ -1,5 +1,5 @@
-# Provinces
-Great Canadian Race
+# Great Canadian Race
+
 
 INTRODUCTION
 This version of the app is a demo version so that the features of the app can be quickly demonstrated.  The number of questions before branching or assessment of progress is set to 5 where the final version will be set to 25 to afford the user total benefit of the question base.  A storyboard of the levels is shown below
