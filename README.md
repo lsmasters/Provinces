@@ -1,4 +1,4 @@
-# H1 Great Canadian Race
+#  Great Canadian Race
 
 ***INTRODUCTION***
 
