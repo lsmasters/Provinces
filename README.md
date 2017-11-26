@@ -8,7 +8,7 @@ branching or assessment of progress is set to 5 where the final version
 will be set to 25 to afford the user total benefit of the question base.
 A storyboard of the levels is shown below
 
-<img src="Provinces/image/image1.jpg" width="624" height="351" />
+<img src="image/image1.jpg" width="624" height="351" />
 
 ***GETTING STARTED***
 
