@@ -8,13 +8,13 @@ branching or assessment of progress is set to 5 where the final version
 will be set to 25 to afford the user total benefit of the question base.
 A storyboard of the levels is shown below
 
-<img src="Provinces/media/image1.jpg" width="624" height="351" />
+<img src="Provinces/images/image1.jpg" width="624" height="351" />
 
 ***GETTING STARTED***
 
 After the user has installed the app, the next step will be login.
 
-<img src="media/image2.png" width="200" height="329" />
+<img src="Provinces/media/image2.png" width="200" height="329" />
 
 For the evaluation of specific levels, use the database section below to
 find an appropriate login.
@@ -23,7 +23,7 @@ find an appropriate login.
 
 Screenshot examples of the individual levels are given below:
 
-<img src="media/image2.png" width="190" height="312" />
+<img src="Provinces/media/image2.png" width="190" height="312" />
 <img src="media/image3.png" width="188" height="313" /><img src="media/image4.png" width="190" height="314" />
 
 LogOn Screen Level 1: Name the province Level 2: Name the outline
