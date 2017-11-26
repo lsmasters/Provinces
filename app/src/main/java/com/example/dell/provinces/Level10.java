@@ -119,8 +119,6 @@ public class Level10 extends AppCompatActivity {
                 setQuestion();
             }
         });
-
-
     }
 
     //check score to see if ready for next level
@@ -128,7 +126,7 @@ public class Level10 extends AppCompatActivity {
         //change...check for 10 correct questions.....calculate score based on time + error*factor
         //check current high score.....if less....record new high score
         //show
-        if (counter > 3) {    //finished when 10 correct answers  ****set higher for final???  25????
+        if (counter > 10) {    //finished when 10 correct answers  ****set higher for final???  25????
             //get end time
             tEnd=System.currentTimeMillis();
             //calculate the elapsed time
@@ -142,7 +140,7 @@ public class Level10 extends AppCompatActivity {
             //
             hsDialog();
 
-
+            Toast.makeText(getApplicationContext(),"TIMER FOR NEW GAME WILL START WHEN FIRST QUESTION IS ANSWERED",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, Level10.class);
             intent.putExtra("name", n);
             intent.putExtra(n, level);

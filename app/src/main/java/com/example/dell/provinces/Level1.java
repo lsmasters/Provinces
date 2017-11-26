@@ -103,7 +103,7 @@ public class Level1 extends AppCompatActivity {
 
     //check score to see if ready for next level
     private void checkScore(){
-        if (i > 2 && ((counter/(i-1))>.9)){           //i changed to 10 for testing only...set back to 25
+        if (i > 4 && ((counter/(i-1))>.9)){           //i changed to 10 for testing only...set back to 25
             //goto SUCCESS screen to end level
 
             successDialog(n,level);
@@ -113,9 +113,8 @@ public class Level1 extends AppCompatActivity {
             intent2.putExtra(n, level);
             startActivity(intent2);
         }
-        if (i>2 &&((counter/(i-1))<.5) ) {
+        if (i>4 &&((counter/(i-1))<.5) ) {
             troubleDialog(n,level);
-
         }
     }
     //setup questions

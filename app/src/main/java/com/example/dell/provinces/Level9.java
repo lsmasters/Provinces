@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class Level9 extends AppCompatActivity {
     int counter, level,q;
     boolean answer;
     int i = 0;
+    Uri webpage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,9 +96,73 @@ public class Level9 extends AppCompatActivity {
 
     }
 
+    public void troubleDialog(String nam, int mlevel){
+        //create dialog object
+        Dialog dialog2 = new Dialog(this);
+        dialog2.setContentView(R.layout.activity_tryagain);
+        dialog2.show();
+        TextView tv = (TextView) dialog2.findViewById(R.id.textView2);
+        tv.setText("You are having some trouble, "+n);
+
+        final Button help = (Button) dialog2.findViewById(R.id.btn_helpingApp);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch(level){
+                    case 1: // app for names of provinces
+                        webpage = Uri.parse("https://lizardpoint.com/geography/canada-quiz.php");
+                        break;
+                    case 2: // app for shapes of provinces
+                        webpage = Uri.parse("https://online.seterra.com/en/vgp/3006)");
+                        break;
+                    case 3:  // app for directions of provinces
+                        webpage = Uri.parse("https://www.helpfulgames.com/subjects/geography/242-cardinal-directions.html");
+                        break;
+                    case 4:  // app for capitals
+                        webpage = Uri.parse("https://www.sporcle.com/games/g/canadacapitals");
+                        break;
+                    case 5:  // app for adjacency
+                        webpage = Uri.parse("https://online.seterra.com/en/vgp/3006)");
+                        break;
+                    case 6:  // app for flags
+                        webpage = Uri.parse("http://www.cbc.ca/kindscbc2/games/match-the-flag-canadian-provinces");
+                        break;
+                    case 7:  // app for birds
+                        webpage = Uri.parse("https://cottagelife.com/general/quiz-do-you-know-the-official-bird-of-every-province-and-territory/");
+                        break;
+                    case 8:  // app for flowers
+                        webpage = Uri.parse("http://www.canadafloraldelivery.com/provincial-and-territorial-flowers-of-canada");
+                        break;
+                    default:
+                }
+                Intent webintent = new Intent(Intent.ACTION_VIEW,webpage);
+            }
+        });
+
+        final Button collaborate = (Button) dialog2.findViewById(R.id.btnCollaborate);
+        collaborate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Sorry but not implemented yet!",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        final Button done = (Button) dialog2.findViewById(R.id.btnQuit);
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Please speak with your teacher.",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        final MediaPlayer sound = MediaPlayer.create(this,R.raw.oops);
+        sound.start();
+
+        dialog2.show();
+    }
     //check score to see if ready for next level
     private void checkScore() {
-        if (i > 10 && ((counter / (i - 1)) > .9)) {    //questions changed to for testing.....change back to 25
+        if (i > 4 && ((counter / (i - 1)) > .9)) {    //questions changed to for testing.....change back to 25
             //next level
             successDialog(n,level);
             level++;
@@ -105,6 +171,9 @@ public class Level9 extends AppCompatActivity {
             intent.putExtra("name", n);
             intent.putExtra(n, level);
             startActivity(intent);
+        }
+        if (i>4 &&((counter/(i-1))<.5) ) {
+            troubleDialog(n, level);
         }
     }
     void successDialog(String nam,int mlevel){
