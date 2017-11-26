@@ -1,6 +1,6 @@
 #  Great Canadian Race
 
-***INTRODUCTION***
+## ***INTRODUCTION***
 
 This version of the app is a demo version so that the features of the
 app can be quickly demonstrated. The number of questions before
@@ -10,7 +10,7 @@ A storyboard of the levels is shown below
 
 <img src="image/image1.jpg" width="624" height="351" />
 
-***GETTING STARTED***
+## ***GETTING STARTED***
 
 After the user has installed the app, the next step will be login.
 
