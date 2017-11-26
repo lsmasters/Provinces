@@ -1,9 +1,11 @@
 package com.example.dell.provinces;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.support.annotation.DrawableRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -97,14 +99,9 @@ public class Level7 extends AppCompatActivity {
 
     //check score to see if ready for next level
     private void checkScore() {
-        if (i > 10 && ((counter / (i - 1)) > .9)) {           //i changed to 10 for testing only...set back to 25
+        if (i > 3 && ((counter / (i - 1)) > .9)) {           //i changed to 10 for testing only...set back to 25
             //goto SUCCESS screen to end level
-            Intent intent1 = new Intent(getApplicationContext(), succ.class);
-            intent1.putExtra("name", n);
-            intent1.putExtra(n, level);
-            Toast.makeText(this, "You should see SUCCESS screen NOW", Toast.LENGTH_LONG).show();
-            startActivity(intent1);
-
+            successDialog(n,level);
             level++;
             dbUpdate(n,level);
             Intent intent2 = new Intent(this, Level8.class);
@@ -114,7 +111,39 @@ public class Level7 extends AppCompatActivity {
 
         }
     }
+    void successDialog(String nam,int mlevel){
+        //create dialog object
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom);
+        dialog.setTitle("           CONGRATULATIONS, "+n);
 
+        // set the custom dialog components - text, image and button
+        TextView c = (TextView) dialog.findViewById(R.id.tv_congrats);
+        c.setText("CONGRATULATIONS, "+nam);
+        TextView t = (TextView) dialog.findViewById(R.id.tv_level);
+        t.setText("Level "+mlevel+" completed!");
+        TextView c2 = (TextView) dialog.findViewById(R.id.tv_congrats2);
+        c2.setText("Step 7:  Super!  Almost there!!");
+        //change for each level
+        ImageView image = (ImageView) dialog.findViewById(R.id.iv_map);
+        image.setImageResource(R.drawable.u8);//    change with level
+
+        // if button is clicked, continue to next level
+        final Button cont = (Button) dialog.findViewById(R.id.btn_continue);
+        cont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Custom dialog button pressed ...",Toast.LENGTH_LONG).show();
+            }
+        });
+        dialog.show();
+        final MediaPlayer sound = MediaPlayer.create(this,R.raw.tada);
+        sound.start();
+        sound.start();
+        sound.start();
+
+
+    }
     //setup questions
     private void setQuestion() {
         number.setText("Question " + (i + 1));

@@ -1,8 +1,10 @@
 package com.example.dell.provinces;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -96,7 +98,7 @@ public class Level6 extends AppCompatActivity {
     private void checkScore() {
         if (i > 10 && ((counter / (i - 1)) > .9)) {    //questions changed to for testing.....change back to 25
             //next level
-            Toast.makeText(this, "CONGRATULATIONS.....You have completed Level 6", Toast.LENGTH_LONG).show();
+           successDialog(n,level);
             level++;
             dbUpdate(n,level);
             Intent intent = new Intent(this, Level7.class);
@@ -105,7 +107,39 @@ public class Level6 extends AppCompatActivity {
             startActivity(intent);
         }
     }
+    void successDialog(String nam,int mlevel){
+        //create dialog object
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom);
+        dialog.setTitle("           CONGRATULATIONS, "+n);
 
+        // set the custom dialog components - text, image and button
+        TextView c = (TextView) dialog.findViewById(R.id.tv_congrats);
+        c.setText("CONGRATULATIONS, "+nam);
+        TextView t = (TextView) dialog.findViewById(R.id.tv_level);
+        t.setText("Level "+mlevel+" completed!");
+        TextView c2 = (TextView) dialog.findViewById(R.id.tv_congrats2);
+        c2.setText("Step 6:  Good job!  Almost there!!");
+        //change for each level
+        ImageView image = (ImageView) dialog.findViewById(R.id.iv_map);
+        image.setImageResource(R.drawable.u7);//    change with level
+
+        // if button is clicked, continue to next level
+        final Button cont = (Button) dialog.findViewById(R.id.btn_continue);
+        cont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Custom dialog button pressed ...",Toast.LENGTH_LONG).show();
+            }
+        });
+        dialog.show();
+        final MediaPlayer sound = MediaPlayer.create(this,R.raw.tada);
+        sound.start();
+        sound.start();
+        sound.start();
+
+
+    }
     //setup questions
     private void setQuestion() {
         number.setText("Question " + (i + 1));

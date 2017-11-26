@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,16 +20,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
-
-
+import java.util.concurrent.ExecutorCompletionService;
+import java.util.concurrent.Future;
 
 
 public class MainActivity extends AppCompatActivity {
+
     EditText name;
     Button submit;
-    int level;
-    String n;
-
+    int level,level2,level3;
+    String lev,n;
+    FirebaseDatabase db;     //"https://greatcanadianrace.firebaseio.com/");
+    DatabaseReference ref;
 
 
     @Override
@@ -38,39 +42,18 @@ public class MainActivity extends AppCompatActivity {
         name=(EditText)findViewById(R.id.nameInput);
         submit=(Button)findViewById(R.id.submitBtn);
 
-
-
+        //name has been entered
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 n=name.getText().toString().trim();
-                Toast.makeText(MainActivity.this, "Welcome, "+ n,Toast.LENGTH_LONG).show();
                 SharedPreferences sp = getPreferences(MODE_PRIVATE);
+                level=getLevel();
 
-                FirebaseDatabase db = FirebaseDatabase.getInstance();     //"https://greatcanadianrace.firebaseio.com/");
-                DatabaseReference ref=db.getReference("user");
-                DatabaseReference refChild=ref.child(n);
-
-                    refChild.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            String lev = dataSnapshot.getValue().toString();
-                            level = Integer.parseInt(lev);
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                            Toast.makeText(MainActivity.this, "DATABASE FAILURE See your teacher", Toast.LENGTH_LONG).show();
-                        }
-                    });
-
-
-                Toast.makeText(MainActivity.this, "You will start at level "+level, Toast.LENGTH_LONG).show();
 
                 Intent intent;
-
                 //change to appropriate starting level
-                switch(level){
+                switch(getLevel()){
                     case 1:
                         intent= new Intent(MainActivity.this, Level1.class);
                         break;
@@ -116,6 +99,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public int getLevel(){
+        FirebaseDatabase db = FirebaseDatabase.getInstance();     //"https://greatcanadianrace.firebaseio.com/");
+        DatabaseReference ref=db.getReference();
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                //asynchronous read issues
+                level = Integer.parseInt(dataSnapshot.child("user").child(n).getValue().toString());
+
+                //when read is complete....continue..
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(MainActivity.this, "DATABASE FAILURE See your teacher", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return level;
+    }
+
     protected void onPause() {
         super.onPause();
         SharedPreferences sp = getPreferences(MODE_PRIVATE);

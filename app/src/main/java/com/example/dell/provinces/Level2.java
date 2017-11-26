@@ -1,8 +1,10 @@
 package com.example.dell.provinces;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -94,18 +96,11 @@ public class Level2 extends AppCompatActivity {
 
     //check score to see if ready for next level
     private void checkScore() {
-        if (i > 10 && ((counter / (i - 1)) > .9)) {    //questions changed to for testing.....change back to 25
+        if (i > 3 && ((counter / (i - 1)) > .9)) {    //questions changed to for testing.....change back to 25
             //next level
             Toast.makeText(this, "CONGRATULATIONS.....You have completed Level 2", Toast.LENGTH_LONG).show();
 
-            /*
-            //goto SUCCESS screen to end level
-            Intent intent1 = new Intent(this, succ.class);
-            intent1.putExtra("name", n);
-            intent1.putExtra(n, level);
-            Toast.makeText(this, "You should see SUCCESS screen NOW", Toast.LENGTH_LONG).show();
-            startActivity(intent1);
-            */
+            successDialog(n,level);
             level++;
             dbUpdate(n, level);
 
@@ -164,6 +159,41 @@ public class Level2 extends AppCompatActivity {
         DatabaseReference refChild = ref.child(name);
         refChild.setValue(3);
     }
+
+    void successDialog(String nam,int mlevel){
+        //create dialog object
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom);
+        dialog.setTitle("           CONGRATULATIONS, "+n);
+
+        // set the custom dialog components - text, image and button
+        TextView c = (TextView) dialog.findViewById(R.id.tv_congrats);
+        c.setText("CONGRATULATIONS, "+nam);
+        TextView t = (TextView) dialog.findViewById(R.id.tv_level);
+        t.setText("Level "+mlevel+" completed!");
+        TextView c2 = (TextView) dialog.findViewById(R.id.tv_congrats2);
+        c2.setText("Step 2:  Fantastic!");
+        //change for each level
+        ImageView image = (ImageView) dialog.findViewById(R.id.iv_map);
+        image.setImageResource(R.drawable.u3);//    change with level
+
+        // if button is clicked, continue to next level
+        final Button cont = (Button) dialog.findViewById(R.id.btn_continue);
+        cont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Custom dialog button pressed ...",Toast.LENGTH_LONG).show();
+            }
+        });
+        dialog.show();
+        final MediaPlayer tada  = MediaPlayer.create(this,R.raw.tada);
+        final MediaPlayer applause = MediaPlayer.create(this,R.raw.applause2);
+        tada.start();
+        applause.start();
+
+
+    }
+
     void errorDialog(){
         AlertDialog.Builder ad = new AlertDialog.Builder(this);
         ad.setMessage("TRIP.....STUMBLE...CRASH!\n\nThe CORRECT answer is \n\n"+pName[q]+"\n")

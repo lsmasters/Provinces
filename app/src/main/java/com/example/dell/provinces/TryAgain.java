@@ -28,7 +28,7 @@ public class TryAgain extends AppCompatActivity {
 
         help=(Button) findViewById(R.id.btn_helpingApp);
         collaborate=(Button) findViewById(R.id.btnCollaborate );
-        quit=(Button) findViewById(R.id.btn_quit);
+        quit=(Button) findViewById(R.id.btnQuit);
 
         //get level and name
         //get NAME and LEVEL from previous class
