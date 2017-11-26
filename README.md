@@ -84,4 +84,4 @@ for questions and suggestions
 
 ## ***LICENCE***
 
-This app is copyrighted and use is solely for evaluation purposes.
+This app is copyrighted and may be used solely for evaluation purposes.
