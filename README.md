@@ -19,7 +19,7 @@ After the user has installed the app, the next step will be login.
 For the evaluation of specific levels, use the database section below to
 find an appropriate login.
 
-***RESULT***
+## ***RESULT***
 
 Screenshot examples of the individual levels are given below:
 
@@ -48,7 +48,7 @@ Level 10: High Score Level Completed
 ***  
 ***
 
-***DATA MODEL***
+## ***DATA MODEL***
 
 <img src="image/image16.png" width="100" height="487" />
 
@@ -68,7 +68,7 @@ The database has three “root” nodes:
     new users will be set to 999. In the final version, only the teacher
     will have access.
 
-***DATABASE RULES***
+## ***DATABASE RULES***
 
 The current demo app database has no security and is totally open as
 shown in the below image.
@@ -77,11 +77,11 @@ shown in the below image.
 
 Scores are indexed in ascending order for improved access speed.
 
-***SUPPORT***
+## ***SUPPORT***
 
 The current development team may be contacted at <lmasters@algomau.ca>
 for questions and suggestions
 
-***LICENCE***
+## ***LICENCE***
 
 This app is copyrighted and use is solely for evaluation purposes.
