@@ -14,7 +14,7 @@ A storyboard of the levels is shown below
 
 After the user has installed the app, the next step will be login.
 
-<img src="Provinces/media/image2.png" width="200" height="329" />
+<img src="image/image2.png" width="200" height="329" />
 
 For the evaluation of specific levels, use the database section below to
 find an appropriate login.
@@ -23,26 +23,26 @@ find an appropriate login.
 
 Screenshot examples of the individual levels are given below:
 
-<img src="Provinces/media/image2.png" width="190" height="312" />
-<img src="media/image3.png" width="188" height="313" /><img src="media/image4.png" width="190" height="314" />
+<img src="image/media/image2.png" width="190" height="312" />
+<img src="image/image3.png" width="188" height="313" /><img src="media/image4.png" width="190" height="314" />
 
 LogOn Screen Level 1: Name the province Level 2: Name the outline
 
-<img src="media/image5.png" width="181" height="303" />
-<img src="media/image6.png" width="183" height="303" />
-<img src="media/image7.png" width="182" height="304" />­­­
+<img src="image/image5.png" width="181" height="303" />
+<img src="image/image6.png" width="183" height="303" />
+<img src="image/image7.png" width="182" height="304" />­­­
 
 Level 3: Give the direction Level 4: Name the capital Level 5: Give the
 neighbours
 
-<img src="media/image8.png" width="182" height="304" />
-<img src="media/image9.png" width="174" height="304" />
-<img src="media/image10.png" width="172" height="305" />
+<img src="image/image8.png" width="182" height="304" />
+<img src="image/image9.png" width="174" height="304" />
+<img src="image/image10.png" width="172" height="305" />
 
 Level 6: Provincial Flags Level 7: Provincial Abbreviations Level 8:
 Provincial Birds
 
-<img src="media/image11.png" width="183" height="305" /><img src="media/image12.png" width="172" height="306" /><img src="media/image13.png" width="172" height="306" />
+<img src="image/image11.png" width="183" height="305" /><img src="image/image12.png" width="172" height="306" /><img src="image/image13.png" width="172" height="306" />
 
 Level 9: Provincial Flowers Level 10: High Score Level 10: High Score
 
