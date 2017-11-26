@@ -23,21 +23,16 @@ find an appropriate login.
 
 Screenshot examples of the individual levels are given below:
 
-<img src="image/image2.png" width="190" height="312" />
-<img src="image/image3.png" width="188" height="313" /><img src="image/image4.png" width="190" height="314" />
+<img src="image/image2.png" width="190" height="312" /><img src="image/image3.png" width="188" height="313" /><img src="image/image4.png" width="190" height="314" />
 
 LogOn Screen Level 1: Name the province Level 2: Name the outline
 
-<img src="image/image5.png" width="181" height="303" />
-<img src="image/image6.png" width="183" height="303" />
-<img src="image/image7.png" width="182" height="304" />­­­
+<img src="image/image5.png" width="181" height="303" /><img src="image/image6.png" width="183" height="303" /><img src="image/image7.png" width="182" height="304" />
 
 Level 3: Give the direction Level 4: Name the capital Level 5: Give the
 neighbours
 
-<img src="image/image8.png" width="182" height="304" />
-<img src="image/image9.png" width="174" height="304" />
-<img src="image/image10.png" width="172" height="305" />
+<img src="image/image8.png" width="182" height="304" /><img src="image/image9.png" width="174" height="304" /><img src="image/image10.png" width="172" height="305" />
 
 Level 6: Provincial Flags Level 7: Provincial Abbreviations Level 8:
 Provincial Birds
@@ -46,8 +41,7 @@ Provincial Birds
 
 Level 9: Provincial Flowers Level 10: High Score Level 10: High Score
 
-<img src="image/image14.png" width="182" height="325" />
-<img src="image/image15.png" width="184" height="326" />
+<img src="image/image14.png" width="182" height="325" /><img src="image/image15.png" width="184" height="326" />
 
 Level 10: High Score Level Completed
 
