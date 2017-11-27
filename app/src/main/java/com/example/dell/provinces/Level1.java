@@ -211,6 +211,7 @@ public class Level1 extends AppCompatActivity {
                     default:
                 }
                 Intent webintent = new Intent(Intent.ACTION_VIEW,webpage);
+                startActivity(webintent);
             }
         });
 
@@ -236,7 +237,7 @@ public class Level1 extends AppCompatActivity {
         dialog2.show();
     }
 
-    public void successDialog(String nam,int mlevel){
+    private void successDialog(String nam,int mlevel){
         //create dialog object
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.custom);
@@ -255,7 +256,7 @@ public class Level1 extends AppCompatActivity {
         //dialog.setCancelable(false);
         //dialog.create();
         // if button is clicked, continue to next level
-        final Button cont = (Button) dialog.findViewById(R.id.btn_continue);
+        Button cont = (Button) dialog.findViewById(R.id.btn_continue);
         cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -136,6 +136,8 @@ public class Level9 extends AppCompatActivity {
                     default:
                 }
                 Intent webintent = new Intent(Intent.ACTION_VIEW,webpage);
+                startActivity(webintent);
+
             }
         });
 
@@ -176,7 +178,7 @@ public class Level9 extends AppCompatActivity {
             troubleDialog(n, level);
         }
     }
-    void successDialog(String nam,int mlevel){
+    private void successDialog(String nam,int mlevel)  {
         //create dialog object
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.custom);

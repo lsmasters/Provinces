@@ -170,6 +170,7 @@ public class Level5 extends AppCompatActivity {
                     default:
                 }
                 Intent webintent = new Intent(Intent.ACTION_VIEW,webpage);
+                startActivity(webintent);
             }
         });
 

@@ -153,6 +153,7 @@ public class Level8 extends AppCompatActivity {
                     default:
                 }
                 Intent webintent = new Intent(Intent.ACTION_VIEW,webpage);
+                startActivity(webintent);
             }
         });
 
